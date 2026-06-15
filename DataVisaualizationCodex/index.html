@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is Omni-channel Research?</title>
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --rule: #d7d7d7;
+      --light-rule: #ececec;
+      --page: #fff;
+      --accent: #1f77b4;
+      --orange: #ff7f0e;
+      --green: #2ca02c;
+      --red: #d62728;
+      --purple: #9467bd;
+      --brown: #8c564b;
+      --pink: #e377c2;
+      --gray: #7f7f7f;
+      --cyan: #17becf;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f5f5f5;
+      color: var(--text);
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      background: var(--page);
+      min-height: 100vh;
+      padding: 42px 58px 70px;
+      box-shadow: 0 0 28px rgba(0, 0, 0, 0.08);
+    }
+
+    header {
+      text-align: center;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 22px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 2.55rem;
+      line-height: 1.08;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .authors, .site {
+      font-size: 1.02rem;
+      line-height: 1.45;
+    }
+
+    .site {
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    h2 {
+      margin: 28px 0 10px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 1.28rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-size: 1.02rem;
+      line-height: 1.58;
+    }
+
+    .summary {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .summary-block {
+      border-bottom: 1px solid var(--light-rule);
+      padding-bottom: 14px;
+    }
+
+    .keywords {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 18px 0 24px;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 12px 0;
+    }
+
+    .metric {
+      text-align: center;
+      min-width: 0;
+    }
+
+    .metric-value {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .metric-label {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .figure {
+      margin: 18px 0 26px;
+      border-top: 1px solid var(--rule);
+      padding-top: 12px;
+    }
+
+    .figure-title, .table-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 8px;
+    }
+
+    .note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .chart-wrap {
+      overflow-x: auto;
+    }
+
+    .chart {
+      min-width: 780px;
+    }
+
+    .axis text, .tick-label {
+      fill: #333;
+      font-size: 11px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 13px;
+      margin-top: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.79rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .swatch {
+      width: 12px;
+      height: 10px;
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--light-rule);
+      padding: 7px 8px;
+      text-align: right;
+      vertical-align: top;
+    }
+
+    th:first-child, td:first-child {
+      text-align: left;
+    }
+
+    thead th {
+      border-bottom: 1px solid var(--text);
+      font-weight: 700;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 1px solid var(--text);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+    }
+
+    .matrix-toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-end;
+      margin: 8px 0 10px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button {
+      border: 1px solid #888;
+      background: white;
+      color: #111;
+      border-radius: 0;
+      padding: 5px 8px;
+      font: inherit;
+      font-size: 0.76rem;
+      cursor: pointer;
+    }
+
+    button.active {
+      background: #111;
+      color: white;
+    }
+
+    .heatmap {
+      min-width: 820px;
+    }
+
+    .heatmap td.cell {
+      color: #111;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .heatmap td.zero {
+      color: #aaa;
+      font-weight: 400;
+      background: #fafafa !important;
+    }
+
+    .gap-list {
+      columns: 2;
+      column-gap: 28px;
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .footer {
+      border-top: 1px solid var(--rule);
+      margin-top: 34px;
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; padding: 28px 42px; }
+      button { display: none; }
+      .chart-wrap, .table-scroll { overflow: visible; }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 28px 20px 46px;
+        box-shadow: none;
+      }
+
+      h1 { font-size: 2rem; }
+
+      .metrics, .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix-toolbar {
+        display: block;
+      }
+
+      .tabs {
+        justify-content: flex-start;
+        margin-top: 10px;
+      }
+
+      .gap-list {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <h1>What Is Omni-channel Research?</h1>
+      <div class="authors">A matrix analysis of the Gibson coded paper corpus</div>
+      <div class="site">BusinessAnalysis/DataVisaualizationCodex</div>
+    </header>
+
+    <section class="summary">
+      <div class="summary-block">
+        <h2>Research Summary</h2>
+        <p id="researchSummary"></p>
+      </div>
+      <div class="summary-block">
+        <h2>Managerial Summary</h2>
+        <p id="managerialSummary"></p>
+      </div>
+      <div class="keywords" id="keywords"></div>
+    </section>
+
+    <section class="metrics" aria-label="Dataset metrics">
+      <div class="metric"><div class="metric-value" id="metricPapers"></div><div class="metric-label">Papers</div></div>
+      <div class="metric"><div class="metric-value" id="metricYears"></div><div class="metric-label">Years</div></div>
+      <div class="metric"><div class="metric-value" id="metricTopics"></div><div class="metric-label">Topics</div></div>
+      <div class="metric"><div class="metric-value" id="metricGaps"></div><div class="metric-label">Zero cells</div></div>
+    </section>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>This visual report follows the paper-style structure of a computational field map: first describe the sample, then show the field's major clusters, then interpret where topics, methods, and disciplinary fields reinforce or diverge from one another.</p>
+      <p>The analysis is based on coded topic, method, field, cross-disciplinary, and year variables. It does not estimate semantic embeddings; instead, it uses the existing coding matrices as a transparent map of the corpus.</p>
+    </section>
+
+    <section>
+      <h2>Data and Methods</h2>
+      <p>The sample contains <span id="sampleN"></span> coded papers. Topics and methods are treated as categorical classifications, and the visualizations aggregate paper counts across years, decades, main fields, and topic-method cells.</p>
+      <div class="figure">
+        <div class="figure-title">Figure 1: Sample Composition by Topic Over Time.</div>
+        <div class="chart-wrap">
+          <svg id="sampleChart" class="chart" viewBox="0 0 900 360" role="img" aria-label="Stacked bar chart of topics over time"></svg>
+        </div>
+        <div id="topicLegend" class="legend"></div>
+        <div class="note">Note: Stacked bars show topic counts by publication year. Unknown publication years are excluded from this figure but retained in aggregate tables.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Findings</h2>
+
+      <h3>Finding 1: The corpus is organized around customer, channel, and fulfillment questions.</h3>
+      <p id="findingOne"></p>
+      <div class="figure two-col">
+        <div>
+          <div class="figure-title">Figure 2a: Topic Frequency.</div>
+          <svg id="topicBars" viewBox="0 0 430 300" role="img" aria-label="Topic frequency bar chart"></svg>
+        </div>
+        <div>
+          <div class="figure-title">Figure 2b: Method Frequency.</div>
+          <svg id="methodBars" viewBox="0 0 430 300" role="img" aria-label="Method frequency bar chart"></svg>
+        </div>
+      </div>
+
+      <h3>Finding 2: Evidence production is split between survey/SEM and operations-modeling traditions.</h3>
+      <p id="findingTwo"></p>
+      <div class="figure">
+        <div class="figure-title">Figure 3: Dominant Topic-Method Combinations.</div>
+        <svg id="comboBars" viewBox="0 0 900 360" role="img" aria-label="Dominant topic-method combinations"></svg>
+        <div class="note">Note: Bars report the largest cells from the topic-by-method matrix.</div>
+      </div>
+
+      <h3>Finding 3: Disciplinary ownership is strong but not complete.</h3>
+      <p id="findingThree"></p>
+      <div class="figure">
+        <div class="figure-title">Figure 4: Main Field Frequency.</div>
+        <svg id="fieldBars" viewBox="0 0 900 330" role="img" aria-label="Main field frequency bar chart"></svg>
+      </div>
+
+      <h3>Finding 4: Empty topic-method cells identify research opportunity zones.</h3>
+      <p id="findingFour"></p>
+      <ol id="gapList" class="gap-list"></ol>
+    </section>
+
+    <section>
+      <h2>Matrix Appendix</h2>
+      <p>The appendix makes the underlying matrices inspectable. Use the buttons to switch between topic-method, field-topic, field-method, year-topic, and year-method views.</p>
+      <div class="figure">
+        <div class="matrix-toolbar">
+          <div>
+            <div class="figure-title" id="matrixTitle">Table A1: Topic x Method Matrix.</div>
+            <div class="note" id="matrixNote"></div>
+          </div>
+          <div id="matrixTabs" class="tabs" aria-label="Matrix selector"></div>
+        </div>
+        <div class="table-scroll">
+          <table id="matrixTable" class="heatmap"></table>
+        </div>
+      </div>
+
+      <div class="figure">
+        <div class="table-title">Table A2: Distribution of Papers by Topic and Decade.</div>
+        <div class="table-scroll">
+          <table id="decadeTable"></table>
+        </div>
+        <div class="note">Note: Decades are based on publication year. Unknown years are reported separately.</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Generated from <span id="sourceFile"></span>. Visual style adapted from the structure of whatisstrategy.org/what_is_strategy.pdf: summary blocks, numbered findings, figure notes, and print-oriented academic layout.
+    </div>
+  </article>
+
+  <script>
+    const DATA = {"source": "DataProcessing/gibson_papers_coded_codex.json", "totalPapers": 519, "uniquePapers": 519, "yearRange": [1990, 2024], "topicLabels": {"T1": "Customer experience / behavior", "T2": "Omni-channel / multi-channel marketing", "T3": "Logistics / fulfillment", "T4": "Inventory / operations / optimization", "T5": "Digital technology / information systems", "T6": "Strategy / business model / organization", "T7": "Performance / measurement / bibliometric review", "T8": "Resilience / capability"}, "methodLabels": {"M1": "Conceptual framework", "M2": "Literature review", "M3": "Bibliometric analysis", "M4": "Case study / interview", "M5": "Survey / SEM", "M6": "Experiment", "M7": "Optimization / simulation / game model", "M8": "Statistical / econometric modeling", "M9": "Mixed methods"}, "topicFrequency": [{"name": "T1", "count": 173}, {"name": "T3", "count": 93}, {"name": "T2", "count": 89}, {"name": "T4", "count": 68}, {"name": "T5", "count": 50}, {"name": "T8", "count": 28}, {"name": "T7", "count": 13}, {"name": "T6", "count": 5}], "methodFrequency": [{"name": "M5", "count": 170}, {"name": "M7", "count": 107}, {"name": "M1", "count": 104}, {"name": "M4", "count": 40}, {"name": "M9", "count": 33}, {"name": "M2", "count": 23}, {"name": "M6", "count": 20}, {"name": "M8", "count": 14}, {"name": "M3", "count": 8}], "fieldFrequency": [{"name": "Marketing", "count": 193}, {"name": "Management Science & Operations Research", "count": 84}, {"name": "Supply Chain Management", "count": 64}, {"name": "Information Systems & Management", "count": 60}, {"name": "Business School (Unclassified)", "count": 49}, {"name": "Quantitative Methods", "count": 32}, {"name": "Consumer Psychology", "count": 25}, {"name": "Operations Management", "count": 5}, {"name": "Strategy & Organization", "count": 4}, {"name": "(Unable to Read)", "count": 3}], "confidence": [{"name": 2, "count": 269}, {"name": 3, "count": 224}, {"name": 1, "count": 26}], "decadeTopic": {"columns": ["1990s", "2000s", "2010s", "2020s", "Unknown"], "rows": [{"code": "T1", "label": "Customer experience / behavior", "values": {"1990s": 1, "2000s": 4, "2010s": 36, "2020s": 131, "Unknown": 1}, "total": 173}, {"code": "T3", "label": "Logistics / fulfillment", "values": {"1990s": 0, "2000s": 0, "2010s": 37, "2020s": 55, "Unknown": 1}, "total": 93}, {"code": "T2", "label": "Omni-channel / multi-channel marketing", "values": {"1990s": 0, "2000s": 0, "2010s": 28, "2020s": 59, "Unknown": 2}, "total": 89}, {"code": "T4", "label": "Inventory / operations / optimization", "values": {"1990s": 0, "2000s": 1, "2010s": 22, "2020s": 45, "Unknown": 0}, "total": 68}, {"code": "T5", "label": "Digital technology / information systems", "values": {"1990s": 0, "2000s": 0, "2010s": 14, "2020s": 36, "Unknown": 0}, "total": 50}, {"code": "T8", "label": "Resilience / capability", "values": {"1990s": 0, "2000s": 0, "2010s": 2, "2020s": 23, "Unknown": 3}, "total": 28}, {"code": "T7", "label": "Performance / measurement / bibliometric review", "values": {"1990s": 0, "2000s": 0, "2010s": 3, "2020s": 10, "Unknown": 0}, "total": 13}, {"code": "T6", "label": "Strategy / business model / organization", "values": {"1990s": 0, "2000s": 0, "2010s": 1, "2020s": 4, "Unknown": 0}, "total": 5}]}, "matrices": {"topic_method": {"title": "Topic x Method", "file": "topic_method_matrix.csv", "row_label": "Topic", "note": "Counts show how each substantive topic is methodologically organized.", "columns": ["Conceptual framework", "Literature review", "Bibliometric analysis", "Case study / interview", "Survey / SEM", "Experiment", "Optimization / simulation / game model", "Statistical / econometric modeling", "Mixed methods"], "rows": [{"name": "T1", "values": {"Conceptual framework": 17, "Literature review": 8, "Bibliometric analysis": 0, "Case study / interview": 13, "Survey / SEM": 98, "Experiment": 9, "Optimization / simulation / game model": 10, "Statistical / econometric modeling": 3, "Mixed methods": 15}, "total": 173}, {"name": "T2", "values": {"Conceptual framework": 19, "Literature review": 4, "Bibliometric analysis": 0, "Case study / interview": 8, "Survey / SEM": 43, "Experiment": 5, "Optimization / simulation / game model": 5, "Statistical / econometric modeling": 2, "Mixed methods": 3}, "total": 89}, {"name": "T3", "values": {"Conceptual framework": 30, "Literature review": 4, "Bibliometric analysis": 1, "Case study / interview": 8, "Survey / SEM": 11, "Experiment": 3, "Optimization / simulation / game model": 25, "Statistical / econometric modeling": 5, "Mixed methods": 6}, "total": 93}, {"name": "T4", "values": {"Conceptual framework": 2, "Literature review": 1, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 1, "Experiment": 1, "Optimization / simulation / game model": 60, "Statistical / econometric modeling": 0, "Mixed methods": 3}, "total": 68}, {"name": "T5", "values": {"Conceptual framework": 25, "Literature review": 5, "Bibliometric analysis": 0, "Case study / interview": 6, "Survey / SEM": 8, "Experiment": 1, "Optimization / simulation / game model": 2, "Statistical / econometric modeling": 2, "Mixed methods": 1}, "total": 50}, {"name": "T6", "values": {"Conceptual framework": 1, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 2, "Survey / SEM": 1, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 1}, "total": 5}, {"name": "T7", "values": {"Conceptual framework": 1, "Literature review": 0, "Bibliometric analysis": 6, "Case study / interview": 0, "Survey / SEM": 2, "Experiment": 0, "Optimization / simulation / game model": 1, "Statistical / econometric modeling": 1, "Mixed methods": 2}, "total": 13}, {"name": "T8", "values": {"Conceptual framework": 9, "Literature review": 1, "Bibliometric analysis": 1, "Case study / interview": 3, "Survey / SEM": 6, "Experiment": 1, "Optimization / simulation / game model": 4, "Statistical / econometric modeling": 1, "Mixed methods": 2}, "total": 28}], "totals": {"Conceptual framework": 104, "Literature review": 23, "Bibliometric analysis": 8, "Case study / interview": 40, "Survey / SEM": 170, "Experiment": 20, "Optimization / simulation / game model": 107, "Statistical / econometric modeling": 14, "Mixed methods": 33, "Total": 519}}, "field_topic": {"title": "Field x Topic", "file": "field_topic_matrix.csv", "row_label": "Main field", "note": "Counts show which disciplines own each topic and where cross-field spillovers appear.", "columns": ["Customer experience / behavior", "Omni-channel / multi-channel marketing", "Logistics / fulfillment", "Inventory / operations / optimization", "Digital technology / information systems", "Strategy / business model / organization", "Performance / measurement / bibliometric review", "Resilience / capability"], "rows": [{"name": "Marketing", "values": {"Customer experience / behavior": 113, "Omni-channel / multi-channel marketing": 64, "Logistics / fulfillment": 1, "Inventory / operations / optimization": 2, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 3, "Resilience / capability": 10}, "total": 193}, {"name": "Management Science & Operations Research", "values": {"Customer experience / behavior": 1, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 22, "Inventory / operations / optimization": 60, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 1}, "total": 84}, {"name": "Supply Chain Management", "values": {"Customer experience / behavior": 2, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 56, "Inventory / operations / optimization": 2, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 2, "Resilience / capability": 2}, "total": 64}, {"name": "Information Systems & Management", "values": {"Customer experience / behavior": 2, "Omni-channel / multi-channel marketing": 1, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 48, "Strategy / business model / organization": 1, "Performance / measurement / bibliometric review": 1, "Resilience / capability": 7}, "total": 60}, {"name": "Business School (Unclassified)", "values": {"Customer experience / behavior": 16, "Omni-channel / multi-channel marketing": 22, "Logistics / fulfillment": 7, "Inventory / operations / optimization": 1, "Digital technology / information systems": 1, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 2}, "total": 49}, {"name": "Quantitative Methods", "values": {"Customer experience / behavior": 11, "Omni-channel / multi-channel marketing": 2, "Logistics / fulfillment": 6, "Inventory / operations / optimization": 1, "Digital technology / information systems": 1, "Strategy / business model / organization": 1, "Performance / measurement / bibliometric review": 7, "Resilience / capability": 3}, "total": 32}, {"name": "Consumer Psychology", "values": {"Customer experience / behavior": 24, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 1}, "total": 25}, {"name": "Operations Management", "values": {"Customer experience / behavior": 2, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 1, "Inventory / operations / optimization": 2, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 5}, {"name": "Strategy & Organization", "values": {"Customer experience / behavior": 1, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 3, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 4}, {"name": "(Unable to Read)", "values": {"Customer experience / behavior": 1, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 2}, "total": 3}], "totals": {"Customer experience / behavior": 173, "Omni-channel / multi-channel marketing": 89, "Logistics / fulfillment": 93, "Inventory / operations / optimization": 68, "Digital technology / information systems": 50, "Strategy / business model / organization": 5, "Performance / measurement / bibliometric review": 13, "Resilience / capability": 28, "Total": 519}}, "field_method": {"title": "Field x Method", "file": "field_method_matrix.csv", "row_label": "Main field", "note": "Counts show methodological specialization by disciplinary field.", "columns": ["Conceptual framework", "Literature review", "Bibliometric analysis", "Case study / interview", "Survey / SEM", "Experiment", "Optimization / simulation / game model", "Statistical / econometric modeling", "Mixed methods"], "rows": [{"name": "Marketing", "values": {"Conceptual framework": 3, "Literature review": 8, "Bibliometric analysis": 2, "Case study / interview": 16, "Survey / SEM": 125, "Experiment": 11, "Optimization / simulation / game model": 15, "Statistical / econometric modeling": 5, "Mixed methods": 8}, "total": 193}, {"name": "Management Science & Operations Research", "values": {"Conceptual framework": 0, "Literature review": 2, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 1, "Experiment": 2, "Optimization / simulation / game model": 75, "Statistical / econometric modeling": 1, "Mixed methods": 3}, "total": 84}, {"name": "Supply Chain Management", "values": {"Conceptual framework": 28, "Literature review": 3, "Bibliometric analysis": 2, "Case study / interview": 9, "Survey / SEM": 8, "Experiment": 1, "Optimization / simulation / game model": 8, "Statistical / econometric modeling": 4, "Mixed methods": 1}, "total": 64}, {"name": "Information Systems & Management", "values": {"Conceptual framework": 32, "Literature review": 6, "Bibliometric analysis": 0, "Case study / interview": 8, "Survey / SEM": 8, "Experiment": 1, "Optimization / simulation / game model": 2, "Statistical / econometric modeling": 3, "Mixed methods": 0}, "total": 60}, {"name": "Business School (Unclassified)", "values": {"Conceptual framework": 35, "Literature review": 3, "Bibliometric analysis": 0, "Case study / interview": 2, "Survey / SEM": 6, "Experiment": 0, "Optimization / simulation / game model": 2, "Statistical / econometric modeling": 1, "Mixed methods": 0}, "total": 49}, {"name": "Quantitative Methods", "values": {"Conceptual framework": 0, "Literature review": 1, "Bibliometric analysis": 4, "Case study / interview": 0, "Survey / SEM": 3, "Experiment": 2, "Optimization / simulation / game model": 1, "Statistical / econometric modeling": 0, "Mixed methods": 21}, "total": 32}, {"name": "Consumer Psychology", "values": {"Conceptual framework": 0, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 3, "Survey / SEM": 17, "Experiment": 3, "Optimization / simulation / game model": 2, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 25}, {"name": "Operations Management", "values": {"Conceptual framework": 3, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 2, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 5}, {"name": "Strategy & Organization", "values": {"Conceptual framework": 0, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 2, "Survey / SEM": 2, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 4}, {"name": "(Unable to Read)", "values": {"Conceptual framework": 3, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 3}], "totals": {"Conceptual framework": 104, "Literature review": 23, "Bibliometric analysis": 8, "Case study / interview": 40, "Survey / SEM": 170, "Experiment": 20, "Optimization / simulation / game model": 107, "Statistical / econometric modeling": 14, "Mixed methods": 33, "Total": 519}}, "year_topic": {"title": "Year x Topic", "file": "year_topic_matrix.csv", "row_label": "Year", "note": "Counts show the changing topical composition of the corpus.", "columns": ["Customer experience / behavior", "Omni-channel / multi-channel marketing", "Logistics / fulfillment", "Inventory / operations / optimization", "Digital technology / information systems", "Strategy / business model / organization", "Performance / measurement / bibliometric review", "Resilience / capability"], "rows": [{"name": "1990", "values": {"Customer experience / behavior": 1, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 1}, {"name": "2000", "values": {"Customer experience / behavior": 3, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 3}, {"name": "2002", "values": {"Customer experience / behavior": 1, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 1}, {"name": "2004", "values": {"Customer experience / behavior": 0, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 1, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 1}, {"name": "2011", "values": {"Customer experience / behavior": 0, "Omni-channel / multi-channel marketing": 1, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 1}, {"name": "2013", "values": {"Customer experience / behavior": 1, "Omni-channel / multi-channel marketing": 1, "Logistics / fulfillment": 1, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 3}, {"name": "2014", "values": {"Customer experience / behavior": 2, "Omni-channel / multi-channel marketing": 1, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 1, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 4}, {"name": "2015", "values": {"Customer experience / behavior": 5, "Omni-channel / multi-channel marketing": 1, "Logistics / fulfillment": 3, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 1, "Resilience / capability": 0}, "total": 10}, {"name": "2016", "values": {"Customer experience / behavior": 3, "Omni-channel / multi-channel marketing": 4, "Logistics / fulfillment": 5, "Inventory / operations / optimization": 2, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 14}, {"name": "2017", "values": {"Customer experience / behavior": 3, "Omni-channel / multi-channel marketing": 4, "Logistics / fulfillment": 4, "Inventory / operations / optimization": 4, "Digital technology / information systems": 3, "Strategy / business model / organization": 1, "Performance / measurement / bibliometric review": 1, "Resilience / capability": 1}, "total": 21}, {"name": "2018", "values": {"Customer experience / behavior": 11, "Omni-channel / multi-channel marketing": 5, "Logistics / fulfillment": 12, "Inventory / operations / optimization": 4, "Digital technology / information systems": 5, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 37}, {"name": "2019", "values": {"Customer experience / behavior": 11, "Omni-channel / multi-channel marketing": 11, "Logistics / fulfillment": 12, "Inventory / operations / optimization": 12, "Digital technology / information systems": 5, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 1, "Resilience / capability": 1}, "total": 53}, {"name": "2020", "values": {"Customer experience / behavior": 34, "Omni-channel / multi-channel marketing": 13, "Logistics / fulfillment": 17, "Inventory / operations / optimization": 8, "Digital technology / information systems": 9, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 3, "Resilience / capability": 2}, "total": 86}, {"name": "2021", "values": {"Customer experience / behavior": 34, "Omni-channel / multi-channel marketing": 12, "Logistics / fulfillment": 11, "Inventory / operations / optimization": 11, "Digital technology / information systems": 13, "Strategy / business model / organization": 3, "Performance / measurement / bibliometric review": 3, "Resilience / capability": 6}, "total": 93}, {"name": "2022", "values": {"Customer experience / behavior": 38, "Omni-channel / multi-channel marketing": 21, "Logistics / fulfillment": 14, "Inventory / operations / optimization": 17, "Digital technology / information systems": 5, "Strategy / business model / organization": 1, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 12}, "total": 108}, {"name": "2023", "values": {"Customer experience / behavior": 25, "Omni-channel / multi-channel marketing": 13, "Logistics / fulfillment": 13, "Inventory / operations / optimization": 9, "Digital technology / information systems": 7, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 4, "Resilience / capability": 3}, "total": 74}, {"name": "2024", "values": {"Customer experience / behavior": 0, "Omni-channel / multi-channel marketing": 0, "Logistics / fulfillment": 0, "Inventory / operations / optimization": 0, "Digital technology / information systems": 2, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 0}, "total": 2}, {"name": "Unknown", "values": {"Customer experience / behavior": 1, "Omni-channel / multi-channel marketing": 2, "Logistics / fulfillment": 1, "Inventory / operations / optimization": 0, "Digital technology / information systems": 0, "Strategy / business model / organization": 0, "Performance / measurement / bibliometric review": 0, "Resilience / capability": 3}, "total": 7}], "totals": {"Customer experience / behavior": 173, "Omni-channel / multi-channel marketing": 89, "Logistics / fulfillment": 93, "Inventory / operations / optimization": 68, "Digital technology / information systems": 50, "Strategy / business model / organization": 5, "Performance / measurement / bibliometric review": 13, "Resilience / capability": 28, "Total": 519}}, "year_method": {"title": "Year x Method", "file": "year_method_matrix.csv", "row_label": "Year", "note": "Counts show the changing methodological composition of the corpus.", "columns": ["Conceptual framework", "Literature review", "Bibliometric analysis", "Case study / interview", "Survey / SEM", "Experiment", "Optimization / simulation / game model", "Statistical / econometric modeling", "Mixed methods"], "rows": [{"name": "1990", "values": {"Conceptual framework": 0, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 1, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 1}, {"name": "2000", "values": {"Conceptual framework": 1, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 2, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 3}, {"name": "2002", "values": {"Conceptual framework": 0, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 1, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 1}, {"name": "2004", "values": {"Conceptual framework": 0, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 1, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 1}, {"name": "2011", "values": {"Conceptual framework": 1, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 1}, {"name": "2013", "values": {"Conceptual framework": 2, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 1}, "total": 3}, {"name": "2014", "values": {"Conceptual framework": 3, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 1}, "total": 4}, {"name": "2015", "values": {"Conceptual framework": 1, "Literature review": 0, "Bibliometric analysis": 1, "Case study / interview": 1, "Survey / SEM": 3, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 4}, "total": 10}, {"name": "2016", "values": {"Conceptual framework": 2, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 1, "Survey / SEM": 4, "Experiment": 2, "Optimization / simulation / game model": 4, "Statistical / econometric modeling": 1, "Mixed methods": 0}, "total": 14}, {"name": "2017", "values": {"Conceptual framework": 5, "Literature review": 1, "Bibliometric analysis": 1, "Case study / interview": 1, "Survey / SEM": 3, "Experiment": 1, "Optimization / simulation / game model": 5, "Statistical / econometric modeling": 0, "Mixed methods": 4}, "total": 21}, {"name": "2018", "values": {"Conceptual framework": 9, "Literature review": 3, "Bibliometric analysis": 0, "Case study / interview": 3, "Survey / SEM": 9, "Experiment": 3, "Optimization / simulation / game model": 6, "Statistical / econometric modeling": 2, "Mixed methods": 2}, "total": 37}, {"name": "2019", "values": {"Conceptual framework": 11, "Literature review": 1, "Bibliometric analysis": 0, "Case study / interview": 4, "Survey / SEM": 17, "Experiment": 1, "Optimization / simulation / game model": 15, "Statistical / econometric modeling": 2, "Mixed methods": 2}, "total": 53}, {"name": "2020", "values": {"Conceptual framework": 17, "Literature review": 2, "Bibliometric analysis": 0, "Case study / interview": 7, "Survey / SEM": 34, "Experiment": 2, "Optimization / simulation / game model": 14, "Statistical / econometric modeling": 3, "Mixed methods": 7}, "total": 86}, {"name": "2021", "values": {"Conceptual framework": 19, "Literature review": 6, "Bibliometric analysis": 3, "Case study / interview": 8, "Survey / SEM": 33, "Experiment": 4, "Optimization / simulation / game model": 15, "Statistical / econometric modeling": 3, "Mixed methods": 2}, "total": 93}, {"name": "2022", "values": {"Conceptual framework": 18, "Literature review": 5, "Bibliometric analysis": 0, "Case study / interview": 6, "Survey / SEM": 37, "Experiment": 6, "Optimization / simulation / game model": 29, "Statistical / econometric modeling": 1, "Mixed methods": 6}, "total": 108}, {"name": "2023", "values": {"Conceptual framework": 9, "Literature review": 5, "Bibliometric analysis": 3, "Case study / interview": 7, "Survey / SEM": 27, "Experiment": 1, "Optimization / simulation / game model": 17, "Statistical / econometric modeling": 1, "Mixed methods": 4}, "total": 74}, {"name": "2024", "values": {"Conceptual framework": 0, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 0, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 1, "Statistical / econometric modeling": 1, "Mixed methods": 0}, "total": 2}, {"name": "Unknown", "values": {"Conceptual framework": 6, "Literature review": 0, "Bibliometric analysis": 0, "Case study / interview": 1, "Survey / SEM": 0, "Experiment": 0, "Optimization / simulation / game model": 0, "Statistical / econometric modeling": 0, "Mixed methods": 0}, "total": 7}], "totals": {"Conceptual framework": 104, "Literature review": 23, "Bibliometric analysis": 8, "Case study / interview": 40, "Survey / SEM": 170, "Experiment": 20, "Optimization / simulation / game model": 107, "Statistical / econometric modeling": 14, "Mixed methods": 33, "Total": 519}}}, "topicMethodZeros": [{"topic": "T1", "method": "Bibliometric analysis"}, {"topic": "T2", "method": "Bibliometric analysis"}, {"topic": "T4", "method": "Bibliometric analysis"}, {"topic": "T4", "method": "Case study / interview"}, {"topic": "T4", "method": "Statistical / econometric modeling"}, {"topic": "T5", "method": "Bibliometric analysis"}, {"topic": "T6", "method": "Literature review"}, {"topic": "T6", "method": "Bibliometric analysis"}, {"topic": "T6", "method": "Experiment"}, {"topic": "T6", "method": "Optimization / simulation / game model"}, {"topic": "T6", "method": "Statistical / econometric modeling"}, {"topic": "T7", "method": "Literature review"}, {"topic": "T7", "method": "Case study / interview"}, {"topic": "T7", "method": "Experiment"}], "dominantTopicMethod": [{"row": "T1", "col": "Survey / SEM", "count": 98}, {"row": "T4", "col": "Optimization / simulation / game model", "count": 60}, {"row": "T2", "col": "Survey / SEM", "count": 43}, {"row": "T3", "col": "Conceptual framework", "count": 30}, {"row": "T3", "col": "Optimization / simulation / game model", "count": 25}, {"row": "T5", "col": "Conceptual framework", "count": 25}, {"row": "T2", "col": "Conceptual framework", "count": 19}, {"row": "T1", "col": "Conceptual framework", "count": 17}, {"row": "T1", "col": "Mixed methods", "count": 15}, {"row": "T1", "col": "Case study / interview", "count": 13}]};
+    const colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#17becf"];
+    const fmt = new Intl.NumberFormat("en-US");
+    const topicName = code => DATA.topicLabels[code] || code;
+    const methodName = code => DATA.methodLabels[code] || code;
+    const topicColor = label => colors[Object.values(DATA.topicLabels).indexOf(label) % colors.length] || "#333";
+
+    function setText(id, value) {
+      document.getElementById(id).textContent = value;
+    }
+
+    function sentenceList(items) {
+      return items.map(item => `${item.name} (${item.count})`).join(", ");
+    }
+
+    function initText() {
+      const topTopics = DATA.topicFrequency.slice(0, 3);
+      const topMethods = DATA.methodFrequency.slice(0, 3);
+      const topFields = DATA.fieldFrequency.slice(0, 3);
+      const topCell = DATA.dominantTopicMethod[0];
+      const yearSpan = `${DATA.yearRange[0]}-${DATA.yearRange[1]}`;
+
+      setText("researchSummary", `This report analyzes ${fmt.format(DATA.totalPapers)} coded papers from ${yearSpan}. Four patterns emerge. First, the corpus is concentrated in ${topicName(topTopics[0].name)} and ${topicName(topTopics[1].name)}. Second, method use is centered on ${methodName(topMethods[0].name)}, ${methodName(topMethods[1].name)}, and ${methodName(topMethods[2].name)}. Third, fields show clear specialization: ${topFields[0].name} is the largest field, while operations-oriented and supply-chain fields anchor optimization and fulfillment work. Fourth, ${DATA.topicMethodZeros.length} topic-method cells are empty, suggesting candidate research gaps.`);
+      setText("managerialSummary", `The literature is strongest where customer behavior, channel design, fulfillment, and operational optimization are already well connected to established methods. For research planning, the most useful opportunities are not simply low-count topics; they are combinations where an important topic has rarely been studied with a method that could plausibly add new evidence.`);
+      setText("keywords", `Keywords: omni-channel research, literature mapping, topic-method matrix, field evolution, research gaps`);
+      setText("metricPapers", fmt.format(DATA.totalPapers));
+      setText("metricYears", yearSpan);
+      setText("metricTopics", DATA.topicFrequency.length);
+      setText("metricGaps", DATA.topicMethodZeros.length);
+      setText("sampleN", fmt.format(DATA.totalPapers));
+      setText("sourceFile", DATA.source);
+      setText("findingOne", `The leading topics are ${topTopics.map(item => `${item.name} ${topicName(item.name)} (${item.count})`).join(", ")}, which together define the center of gravity of the corpus.`);
+      setText("findingTwo", `The largest method categories are ${topMethods.map(item => `${item.name} ${methodName(item.name)} (${item.count})`).join(", ")}, indicating two major evidence traditions: behavioral survey evidence and operations-style analytical modeling.`);
+      setText("findingThree", `The largest main fields are ${sentenceList(topFields)}. The matrix view below shows that field-topic alignment is strong, especially for marketing/customer behavior, management science/optimization, supply chain/fulfillment, and information systems/digital technology.`);
+      setText("findingFour", `There are ${DATA.topicMethodZeros.length} empty cells in the topic-method matrix. These cells should be read as research opportunity candidates rather than proof that no work is possible.`);
+    }
+
+    function svgEl(name, attrs, parent) {
+      const node = document.createElementNS("http://www.w3.org/2000/svg", name);
+      Object.entries(attrs || {}).forEach(([key, value]) => node.setAttribute(key, value));
+      parent.appendChild(node);
+      return node;
+    }
+
+    function text(svg, x, y, value, attrs = {}) {
+      const node = svgEl("text", { x, y, ...attrs }, svg);
+      node.textContent = value;
+      return node;
+    }
+
+    function renderHorizontalBars(id, items, options = {}) {
+      const svg = document.getElementById(id);
+      const width = options.width || Number(svg.viewBox.baseVal.width) || 900;
+      const height = options.height || Number(svg.viewBox.baseVal.height) || 330;
+      const left = options.left || 210;
+      const right = 28;
+      const top = 18;
+      const rowH = options.rowH || 30;
+      const barH = options.barH || 18;
+      const max = Math.max(...items.map(item => item.count), 1);
+      svg.innerHTML = "";
+
+      items.forEach((item, index) => {
+        const y = top + index * rowH;
+        const w = ((width - left - right) * item.count) / max;
+        text(svg, left - 8, y + 14, item.label, { "text-anchor": "end", "font-size": 11, fill: "#222" });
+        svgEl("rect", { x: left, y, width: w, height: barH, fill: item.color || colors[index % colors.length] }, svg);
+        text(svg, left + w + 6, y + 14, fmt.format(item.count), { "font-size": 11, fill: "#222" });
+      });
+    }
+
+    function renderSampleChart() {
+      const matrix = DATA.matrices.year_topic;
+      const rows = matrix.rows.filter(row => row.name !== "Unknown");
+      const cols = matrix.columns;
+      const svg = document.getElementById("sampleChart");
+      const width = 900;
+      const height = 360;
+      const margin = { top: 18, right: 18, bottom: 45, left: 48 };
+      const innerW = width - margin.left - margin.right;
+      const innerH = height - margin.top - margin.bottom;
+      const maxTotal = Math.max(...rows.map(row => row.total), 1);
+      const gap = 8;
+      const barW = (innerW - gap * (rows.length - 1)) / rows.length;
+      svg.innerHTML = "";
+
+      const y = value => margin.top + innerH - (value / maxTotal) * innerH;
+      for (let tick = 0; tick <= maxTotal; tick += 20) {
+        const yy = y(tick);
+        svgEl("line", { x1: margin.left, y1: yy, x2: width - margin.right, y2: yy, stroke: "#e5e5e5" }, svg);
+        text(svg, margin.left - 8, yy + 4, tick, { "text-anchor": "end", "font-size": 11, fill: "#333" });
+      }
+
+      rows.forEach((row, i) => {
+        const x = margin.left + i * (barW + gap);
+        let acc = 0;
+        cols.forEach((col, j) => {
+          const value = row.values[col];
+          if (!value) return;
+          const yTop = y(acc + value);
+          const yBottom = y(acc);
+          const rect = svgEl("rect", { x, y: yTop, width: barW, height: Math.max(1, yBottom - yTop), fill: colors[j % colors.length] }, svg);
+          const title = svgEl("title", {}, rect);
+          title.textContent = `${row.name} | ${col}: ${value}`;
+          acc += value;
+        });
+        text(svg, x + barW / 2, height - 18, row.name, { "text-anchor": "middle", "font-size": 11, fill: "#333", transform: `rotate(-35 ${x + barW / 2} ${height - 18})` });
+      });
+      svgEl("line", { x1: margin.left, y1: margin.top + innerH, x2: width - margin.right, y2: margin.top + innerH, stroke: "#111" }, svg);
+      text(svg, 10, 22, "Papers", { "font-size": 12, fill: "#111" });
+      text(svg, width / 2, height - 2, "Year", { "text-anchor": "middle", "font-size": 12, fill: "#111" });
+
+      document.getElementById("topicLegend").innerHTML = cols.map((col, i) =>
+        `<span class="legend-item"><span class="swatch" style="background:${colors[i % colors.length]}"></span>${col}</span>`
+      ).join("");
+    }
+
+    function renderFrequencyFigures() {
+      renderHorizontalBars("topicBars", DATA.topicFrequency.map((item, i) => ({
+        label: `${item.name} ${topicName(item.name)}`,
+        count: item.count,
+        color: colors[i % colors.length]
+      })), { width: 430, height: 300, left: 210, rowH: 32 });
+
+      renderHorizontalBars("methodBars", DATA.methodFrequency.map((item, i) => ({
+        label: `${item.name} ${methodName(item.name)}`,
+        count: item.count,
+        color: colors[(i + 2) % colors.length]
+      })), { width: 430, height: 300, left: 220, rowH: 29 });
+
+      renderHorizontalBars("comboBars", DATA.dominantTopicMethod.map((item, i) => ({
+        label: `${item.row} x ${item.col}`,
+        count: item.count,
+        color: colors[i % colors.length]
+      })), { width: 900, height: 360, left: 360, rowH: 31 });
+
+      renderHorizontalBars("fieldBars", DATA.fieldFrequency.map((item, i) => ({
+        label: item.name,
+        count: item.count,
+        color: colors[i % colors.length]
+      })), { width: 900, height: 330, left: 280, rowH: 29 });
+    }
+
+    function heat(value, max) {
+      if (!value) return "#fafafa";
+      const t = value / max;
+      return `rgba(31, 119, 180, ${0.12 + t * 0.76})`;
+    }
+
+    function renderMatrix(key) {
+      const matrix = DATA.matrices[key];
+      const max = Math.max(...matrix.rows.flatMap(row => Object.values(row.values)), 1);
+      const title = `Table A1: ${matrix.title} Matrix.`;
+      setText("matrixTitle", title);
+      setText("matrixNote", `Note: ${matrix.note} Darker cells indicate larger counts.`);
+
+      const header = [`<th>${matrix.row_label}</th>`]
+        .concat(matrix.columns.map(col => `<th>${col}</th>`))
+        .concat(`<th>Total</th>`)
+        .join("");
+      const body = matrix.rows.map(row => {
+        const cells = matrix.columns.map(col => {
+          const value = row.values[col];
+          return `<td class="cell ${value === 0 ? "zero" : ""}" style="background:${heat(value, max)}">${value}</td>`;
+        }).join("");
+        return `<tr><td><strong>${row.name}</strong></td>${cells}<td><strong>${row.total}</strong></td></tr>`;
+      }).join("");
+      const totals = `<tr><td><strong>Total</strong></td>${matrix.columns.map(col => `<td><strong>${matrix.totals[col] || 0}</strong></td>`).join("")}<td><strong>${matrix.totals.Total || 0}</strong></td></tr>`;
+      document.getElementById("matrixTable").innerHTML = `<thead><tr>${header}</tr></thead><tbody>${body}${totals}</tbody>`;
+
+      document.querySelectorAll("#matrixTabs button").forEach(button => {
+        button.classList.toggle("active", button.dataset.key === key);
+      });
+    }
+
+    function renderTabs() {
+      const target = document.getElementById("matrixTabs");
+      target.innerHTML = Object.entries(DATA.matrices).map(([key, matrix]) => `<button type="button" data-key="${key}">${matrix.title}</button>`).join("");
+      target.addEventListener("click", event => {
+        const button = event.target.closest("button");
+        if (button) renderMatrix(button.dataset.key);
+      });
+    }
+
+    function renderDecadeTable() {
+      const table = DATA.decadeTopic;
+      const header = [`<th>Research Topic</th>`].concat(table.columns.map(col => `<th>${col}</th>`)).concat(`<th>Total</th>`).join("");
+      const body = table.rows.map(row => {
+        const cells = table.columns.map(col => `<td>${row.values[col]}</td>`).join("");
+        return `<tr><td>${row.code} ${row.label}</td>${cells}<td><strong>${row.total}</strong></td></tr>`;
+      }).join("");
+      document.getElementById("decadeTable").innerHTML = `<thead><tr>${header}</tr></thead><tbody>${body}</tbody>`;
+    }
+
+    function renderGaps() {
+      document.getElementById("gapList").innerHTML = DATA.topicMethodZeros.map(gap => `<li>${gap.topic} ${topicName(gap.topic)} x ${gap.method}</li>`).join("");
+    }
+
+    initText();
+    renderSampleChart();
+    renderFrequencyFigures();
+    renderTabs();
+    renderMatrix("topic_method");
+    renderDecadeTable();
+    renderGaps();
+  </script>
+</body>
+</html>
