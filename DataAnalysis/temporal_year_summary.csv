@@ -1,0 +1,18 @@
+Year,Total,Topic HHI,Effective topics,Top topic,Top topic label,Top topic share,Method HHI,Effective methods,Top method,Top method label,Top method share,Field HHI,Effective fields,Cross-disciplinary papers,Cross-disciplinary share,Average cross count
+1990,1,1.0,1.0,T1,Customer experience / behavior,1.0,1.0,1.0,M5,Survey / SEM,1.0,1.0,1.0,1,1.0,1.0
+2000,3,1.0,1.0,T1,Customer experience / behavior,1.0,0.5556,1.8,M5,Survey / SEM,0.6667,0.5556,1.8,2,0.6667,1.333
+2002,1,1.0,1.0,T1,Customer experience / behavior,1.0,1.0,1.0,M4,Case study / interview,1.0,1.0,1.0,1,1.0,1.0
+2004,1,1.0,1.0,T4,Inventory / operations / optimization,1.0,1.0,1.0,M7,Optimization / simulation / game model,1.0,1.0,1.0,1,1.0,2.0
+2011,1,1.0,1.0,T2,Omni-channel / multi-channel marketing,1.0,1.0,1.0,M1,Conceptual framework,1.0,1.0,1.0,0,0.0,0.0
+2013,3,0.3333,3.0,T3,Logistics / fulfillment,0.3333,0.5556,1.8,M1,Conceptual framework,0.6667,0.3333,3.0,1,0.3333,0.667
+2014,4,0.375,2.67,T1,Customer experience / behavior,0.5,0.625,1.6,M1,Conceptual framework,0.75,0.375,2.67,0,0.0,0.0
+2015,10,0.36,2.78,T1,Customer experience / behavior,0.5,0.28,3.57,M9,Mixed methods,0.4,0.36,2.78,5,0.5,0.8
+2016,14,0.2755,3.63,T3,Logistics / fulfillment,0.3571,0.2143,4.67,M5,Survey / SEM,0.2857,0.2449,4.08,10,0.7143,0.857
+2017,21,0.1565,6.39,T3,Logistics / fulfillment,0.1905,0.1791,5.58,M1,Conceptual framework,0.2381,0.1882,5.31,14,0.6667,1.095
+2018,37,0.2418,4.14,T3,Logistics / fulfillment,0.3243,0.1702,5.88,M5,Survey / SEM,0.2432,0.1994,5.01,20,0.5405,0.865
+2019,53,0.1983,5.04,T3,Logistics / fulfillment,0.2264,0.2353,4.25,M5,Survey / SEM,0.3208,0.2282,4.38,27,0.5094,0.849
+2020,86,0.2396,4.17,T1,Customer experience / behavior,0.3953,0.2374,4.21,M5,Survey / SEM,0.3953,0.2239,4.47,55,0.6395,0.942
+2021,93,0.2041,4.9,T1,Customer experience / behavior,0.3656,0.2096,4.77,M5,Survey / SEM,0.3548,0.22,4.54,59,0.6344,0.935
+2022,108,0.2178,4.59,T1,Customer experience / behavior,0.3519,0.2287,4.37,M5,Survey / SEM,0.3426,0.2303,4.34,62,0.5741,0.88
+2023,74,0.2042,4.9,T1,Customer experience / behavior,0.3378,0.2191,4.56,M5,Survey / SEM,0.3649,0.2776,3.6,58,0.7838,1.23
+2024,2,1.0,1.0,T5,Digital technology / information systems,1.0,0.5,2.0,M7,Optimization / simulation / game model,0.5,1.0,1.0,2,1.0,1.5

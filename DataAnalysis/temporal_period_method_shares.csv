@@ -1,0 +1,10 @@
+Code,Label,Formation (1990-2017) count,Formation (1990-2017) share,Expansion (2018-2019) count,Expansion (2018-2019) share,Surge (2020-2023) count,Surge (2020-2023) share,Recent/partial (2024+) count,Recent/partial (2024+) share,Unknown count,Unknown share,Total
+M1,Conceptual framework,15,0.2542,20,0.2222,63,0.1745,0,0.0,6,0.8571,104
+M2,Literature review,1,0.0169,4,0.0444,18,0.0499,0,0.0,0,0.0,23
+M3,Bibliometric analysis,2,0.0339,0,0.0,6,0.0166,0,0.0,0,0.0,8
+M4,Case study / interview,4,0.0678,7,0.0778,28,0.0776,0,0.0,1,0.1429,40
+M5,Survey / SEM,13,0.2203,26,0.2889,131,0.3629,0,0.0,0,0.0,170
+M6,Experiment,3,0.0508,4,0.0444,13,0.036,0,0.0,0,0.0,20
+M7,Optimization / simulation / game model,10,0.1695,21,0.2333,75,0.2078,1,0.5,0,0.0,107
+M8,Statistical / econometric modeling,1,0.0169,4,0.0444,8,0.0222,1,0.5,0,0.0,14
+M9,Mixed methods,10,0.1695,4,0.0444,19,0.0526,0,0.0,0,0.0,33

@@ -1,6 +1,6 @@
 # Gibson Data Visualization Codex
 
-This folder contains a self-contained HTML visual report generated from the CSV matrices in `../DataAnalysis`.
+This folder contains a self-contained HTML visual report generated from the matrix and temporal-analysis outputs in `../DataAnalysis`.
 
 The format is adapted from the report structure of `whatisstrategy.org/what_is_strategy.pdf`: research summary, managerial summary, numbered findings, figure notes, and print-oriented academic layout.
 
@@ -28,11 +28,25 @@ The dashboard uses:
 
 ## Visualization Choices
 
-The report focuses on four research-useful claims:
+The report now focuses on field evolution over time:
 
-- the corpus is organized around customer, channel, and fulfillment questions
-- evidence production is split between survey/SEM and operations-modeling traditions
-- disciplinary ownership is strong but not complete
-- empty topic-method cells identify research opportunity zones
+- annual volume growth and the 2022 publication peak
+- topic concentration, dispersion, and reconsolidation using inverse-HHI effective categories
+- pre-2020 versus 2020-2024 topic shifts
+- pre-2020 versus 2020-2024 method shifts
+- cross-disciplinary share over time
 
-The appendix keeps the underlying matrices inspectable through switchable heatmap tables.
+The appendix keeps the original matrix analysis inspectable through switchable heatmap tables.
+
+## Required Analysis Files
+
+In addition to the original matrix outputs, the report uses:
+
+- `temporal_year_summary.csv`
+- `temporal_period_topic_shares.csv`
+- `temporal_period_method_shares.csv`
+- `temporal_decade_topic_shares.csv`
+- `temporal_decade_method_shares.csv`
+- `temporal_topic_shift_pre2020_vs_2020s.csv`
+- `temporal_method_shift_pre2020_vs_2020s.csv`
+- `temporal_analysis_summary.md`
